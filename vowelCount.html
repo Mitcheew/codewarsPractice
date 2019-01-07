@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+        <input id="str" onchange="getCount()" type="text">
+    
+    <p>total number of lower-case vowels: <r id="result">0</r> </p>
+    <script>
+        //Return the number (count) of vowels in the given string.
+
+        //We will consider a, e, i, o, and u as vowels for this Kata.
+
+        //The input string will only consist of lower case letters and/or spaces.
+        function getCount() {
+        var vowelCount = 0;
+        var str = document.getElementById("str").value
+            console.log(str, str.length)
+            for (let i = 0; i < str.length; i++) {
+                if (/[aeiou]/.test(str[i])) {
+                    vowelCount++
+                }
+            }
+        document.getElementById("result").innerHTML = vowelCount;
+        }
+
+    </script>
+</body>
+
+</html>
