@@ -1,18 +1,18 @@
- //Return the number (count) of vowels in the given string.
+//Return the number (count) of vowels in the given string.
 
-        //We will consider a, e, i, o, and u as vowels for this Kata.
+//We will consider a, e, i, o, and u as vowels for this Kata.
 
-        //The input string will only consist of lower case letters and/or spaces.
-        function getCount(str = document.getElementById("str").value) {
-            var vowelCount = 0;
-                console.log(str, str.length)
-                for (let i = 0; i < str.length; i++) {
-                    if (/[aeiou]/.test(str[i])) {
-                        vowelCount++
-                    }
-                }
-            document.getElementById("result").innerHTML = vowelCount;
-            }
+//The input string will only consist of lower case letters and/or spaces.
+function getCount(str = document.getElementById("str").value) {
+    var vowelCount = 0;
+    console.log(str, str.length)
+    for (let i = 0; i < str.length; i++) {
+        if (/[aeiou]/.test(str[i])) {
+            vowelCount++
+        }
+    }
+    document.getElementById("result").innerHTML = vowelCount;
+}
 //---------------------------------------------------------------------------------
 // Suppose you have 4 numbers: '0', '9', '6', '4' and 3 strings composed with them:
 
@@ -35,21 +35,30 @@
 // Given string s = "444996, 699990, 666690, 096904, 600644, 640646, 606469, 409694, 666094, 606490" composing a set of n = 10 substrings (hence 45 combinations), pos_average returns 29.2592592593.
 
 // In a set the n substrings will have the same length ( > 0 ).
-            function posAverage(s = document.getElementById("str").value) {
-                // your code
-                let common = 0;
-                let total = 0;
-                s = s.split(', ')
-                for(let i = 0; i < s.length; i++){
-                  for(let j = 0; j < s[i].length; j++){
-                  for(let k = i + 1; k < s.length; k++){
-                  total++
-                    if(s[k] && s[i][j] === s[k][j]){
-                      common++
-                    }
-                  }
-                    
-                  }
+function posAverage(s = document.getElementById("str").value) {
+    // your code
+    let common = 0;
+    let total = 0;
+    s = s.split(', ')
+    for (let i = 0; i < s.length; i++) {
+        for (let j = 0; j < s[i].length; j++) {
+            for (let k = i + 1; k < s.length; k++) {
+                total++
+                if (s[k] && s[i][j] === s[k][j]) {
+                    common++
                 }
-            document.getElementById("result").innerHTML = (common / total * 100).toFixed(10); 
             }
+
+        }
+    }
+    document.getElementById("result").innerHTML = (common / total * 100).toFixed(10);
+}
+
+// takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+function sortByLength(array = document.getElementById("arr").value) {
+    array = array.split(', ')
+    array = array.sort((a, b) => a.length - b.length)
+    array = array.join(', ')
+    document.getElementById("result").innerHTML = array;
+
+};
