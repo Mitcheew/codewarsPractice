@@ -75,3 +75,14 @@ function multiples(number = Number(document.getElementById("str").value)) {
 
     document.getElementById("result").innerHTML = sum;
 }
+
+// Given an integral number, determine if it's a square number:
+
+let isSquare = function(n = Number(document.getElementById("str").value)){
+    document.getElementById("result").innerHTML = Math.sqrt(n) % 1 === 0;
+    // if ( n % rt === 0 || n === 0){
+    // return true;
+    // }  else {
+    //   return false
+    // }
+  }
