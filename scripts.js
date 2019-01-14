@@ -78,11 +78,24 @@ function multiples(number = Number(document.getElementById("str").value)) {
 
 // Given an integral number, determine if it's a square number:
 
-let isSquare = function(n = Number(document.getElementById("str").value)){
+let isSquare = function (n = Number(document.getElementById("str").value)) {
     document.getElementById("result").innerHTML = Math.sqrt(n) % 1 === 0;
     // if ( n % rt === 0 || n === 0){
     // return true;
     // }  else {
     //   return false
     // }
-  }
+}
+
+//   You need to write regex that will validate a password to make sure it meets the following criteria:
+
+// At least six characters long
+// contains a lowercase letter
+// contains an uppercase letter
+// contains a number
+// Valid passwords will only be alphanumeric characters.
+
+function validate(password = document.getElementById("str").value) {
+    document.getElementById("result").innerHTML = (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*[-!$%^&*()_+|~=`\\#{}\[\]:";'<>?,.\/ ]).{6}/g).test(password);
+       
+    }
