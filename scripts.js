@@ -99,3 +99,16 @@ function validate(password = document.getElementById("str").value) {
     document.getElementById("result").innerHTML = (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*[-!$%^&*()_+|~=`\\#{}\[\]:";'<>?,.\/ ]).{6}/g).test(password);
        
     }
+
+    // you are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+    function getMiddle(s = document.getElementById("str").value){
+  let mid = (s.length - 1) / 2
+  if(mid % 1 === 0){
+    document.getElementById("result").innerHTML = s[mid]
+  }
+  else {
+  mid = Math.floor(mid)
+  document.getElementById("result").innerHTML = s[mid] + s[mid + 1]
+  }
+}
