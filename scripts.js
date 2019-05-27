@@ -97,20 +97,20 @@ let isSquare = function (n = Number(document.getElementById("str").value)) {
 
 function validate(password = document.getElementById("str").value) {
     document.getElementById("result").innerHTML = (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*[-!$%^&*()_+|~=`\\#{}\[\]:";'<>?,.\/ ]).{6}/g).test(password);
-       
+
+}
+
+// you are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+function getMiddle(s = document.getElementById("str").value) {
+    let mid = (s.length - 1) / 2
+    if (mid % 1 === 0) {
+        document.getElementById("result").innerHTML = s[mid]
     }
-
-    // you are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
-
-    function getMiddle(s = document.getElementById("str").value){
-  let mid = (s.length - 1) / 2
-  if(mid % 1 === 0){
-    document.getElementById("result").innerHTML = s[mid]
-  }
-  else {
-  mid = Math.floor(mid)
-  document.getElementById("result").innerHTML = s[mid] + s[mid + 1]
-  }
+    else {
+        mid = Math.floor(mid)
+        document.getElementById("result").innerHTML = s[mid] + s[mid + 1]
+    }
 }
 
 // Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
@@ -129,17 +129,29 @@ function persistence(num, count = 0) {
     numString = num.toString()
     numArr = numString.split('')
     let sum = 1
-    for(let i = 0; i < numArr.length; i++){
-      sum *= Number(numArr[i])
+    for (let i = 0; i < numArr.length; i++) {
+        sum *= Number(numArr[i])
     }
     console.log(sum)
-    if(sum > 9){
-      count ++
-      return persistence(sum, count)
-    } else if(numArr.length === 1){
-      return count
+    if (sum > 9) {
+        count++
+        return persistence(sum, count)
+    } else if (numArr.length === 1) {
+        return count
     } else {
-      count++
-      return count
+        count++
+        return count
     }
- }
+}
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+function order(words = document.getElementById("str").value) {
+    document.getElementById("result").innerHTML = words.split(' ').sort(function (a, b) {
+        return (a.match(/\d/) - (b.match(/\d/)));
+    }).join(' ');
+    
+}
