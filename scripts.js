@@ -153,5 +153,20 @@ function order(words = document.getElementById("str").value) {
     document.getElementById("result").innerHTML = words.split(' ').sort(function (a, b) {
         return (a.match(/\d/) - (b.match(/\d/)));
     }).join(' ');
-    
+
+}
+
+
+function simpleTransposition(text = document.getElementById("str").value) {
+    let row1 = ''
+    let row2 = ''
+    for (let i = 0; i < text.length; i++) {
+        if (i % 2 === 0) {
+            row1 += text[i];
+        }
+        else {
+            row2 += text[i]
+        }
+    }
+    document.getElementById("result").innerHTML = row1 + row2
 }
