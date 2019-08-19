@@ -170,3 +170,11 @@ function simpleTransposition(text = document.getElementById("str").value) {
     }
     document.getElementById("result").innerHTML = row1 + row2
 }
+
+//Check if an array contains a given value
+
+function checkArrayForValue(a = document.getElementById("str").value, x = document.getElementById("val").value){
+    let arr = a.split(', ');
+    if(a === "") document.getElementById("result").innerHTML = "Enter in all values first"
+    else document.getElementById("result").innerHTML = !(-1 == arr.indexOf(x))
+    };
