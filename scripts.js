@@ -181,8 +181,16 @@ function checkArrayForValue(a = document.getElementById("str").value, x = docume
 
 //get the average marks of an array of numbers, rounded down.
 function getAverage(marks = document.getElementById("val").value) {
-    //TODO : calculate the downwar rounded average of the marks array
     let arr = marks.split(', ').map(x => parseInt(x));
     console.log(arr)
     document.getElementById("result").innerHTML = Math.floor(arr.reduce((sum, next) => { return sum + next }, 0) / arr.length)
 }
+
+//return a bunch of 1's and 0's alternating depending on the size given
+function stringy(size = document.getElementById("str").value) {
+    let result = '';
+    for(let i = 0; i < size; i++){
+      i % 2 ? result += '0' : result += '1'
+    }
+    document.getElementById("result").innerHTML =  result
+  }
