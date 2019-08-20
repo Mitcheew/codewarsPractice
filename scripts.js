@@ -173,8 +173,16 @@ function simpleTransposition(text = document.getElementById("str").value) {
 
 //Check if an array contains a given value
 
-function checkArrayForValue(a = document.getElementById("str").value, x = document.getElementById("val").value){
+function checkArrayForValue(a = document.getElementById("str").value, x = document.getElementById("val").value) {
     let arr = a.split(', ');
-    if(a === "") document.getElementById("result").innerHTML = "Enter in all values first"
+    if (a === "") document.getElementById("result").innerHTML = "Enter in all values first"
     else document.getElementById("result").innerHTML = !(-1 == arr.indexOf(x))
-    };
+};
+
+//get the average marks of an array of numbers, rounded down.
+function getAverage(marks = document.getElementById("val").value) {
+    //TODO : calculate the downwar rounded average of the marks array
+    let arr = marks.split(', ').map(x => parseInt(x));
+    console.log(arr)
+    document.getElementById("result").innerHTML = Math.floor(arr.reduce((sum, next) => { return sum + next }, 0) / arr.length)
+}
