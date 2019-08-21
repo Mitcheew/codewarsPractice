@@ -192,5 +192,13 @@ function stringy(size = document.getElementById("str").value) {
     for(let i = 0; i < size; i++){
       i % 2 ? result += '0' : result += '1'
     }
-    document.getElementById("result").innerHTML =  result
+    document.getElementById("result").innerHTML = result
   }
+
+//multiply 2 different sets of numbers and find the number difference between them
+//Difference in Volume
+const findDifference = ((a = document.getElementById("aValue").value, b = document.getElementById("bValue").value) => {
+let arr1 = a.split(', ')
+let arr2 = b.split(', ')
+document.getElementById("result").innerHTML = Math.abs(arr1.reduce((prev, curr) => prev *= curr) - arr2.reduce((prev, curr) => prev *= curr))
+})
