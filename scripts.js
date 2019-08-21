@@ -189,16 +189,22 @@ function getAverage(marks = document.getElementById("val").value) {
 //return a bunch of 1's and 0's alternating depending on the size given
 function stringy(size = document.getElementById("str").value) {
     let result = '';
-    for(let i = 0; i < size; i++){
-      i % 2 ? result += '0' : result += '1'
+    for (let i = 0; i < size; i++) {
+        i % 2 ? result += '0' : result += '1'
     }
     document.getElementById("result").innerHTML = result
-  }
+}
 
 //multiply 2 different sets of numbers and find the number difference between them
 //Difference in Volume
 const findDifference = ((a = document.getElementById("aValue").value, b = document.getElementById("bValue").value) => {
-let arr1 = a.split(', ')
-let arr2 = b.split(', ')
-document.getElementById("result").innerHTML = Math.abs(arr1.reduce((prev, curr) => prev *= curr) - arr2.reduce((prev, curr) => prev *= curr))
+    let arr1 = a.split(', ')
+    let arr2 = b.split(', ')
+    document.getElementById("result").innerHTML = Math.abs(arr1.reduce((prev, curr) => prev *= curr) - arr2.reduce((prev, curr) => prev *= curr))
 })
+
+//Check to see if a string is a palindrome, ignoring case sensitivity.
+const isPalindrome = (x = document.getElementById("str").value) => {
+
+    document.getElementById("result").innerHTML = x.toLowerCase() === x.split('').reverse().join('').toLowerCase()
+};
