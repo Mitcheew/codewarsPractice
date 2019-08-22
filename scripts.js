@@ -1,3 +1,13 @@
+// Execute a function when the user releases a key on the keyboard
+addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
 //Return the number (count) of vowels in the given string.
 
 //We will consider a, e, i, o, and u as vowels for this Kata.
@@ -211,3 +221,6 @@ const isPalindrome = (x = document.getElementById("str").value) => {
 
 //check what century it is
 const century = (year = parseInt(document.getElementById("str").value)) => document.getElementById("result").innerHTML = Math.ceil(year/100)
+
+//convert a string to an array
+const stringToArray = (string = document.getElementById("str").value) => document.getElementById("result").innerHTML = string.split(' ')
