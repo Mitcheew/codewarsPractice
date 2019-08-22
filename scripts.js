@@ -208,3 +208,6 @@ const isPalindrome = (x = document.getElementById("str").value) => {
 
     document.getElementById("result").innerHTML = x.toLowerCase() === x.split('').reverse().join('').toLowerCase()
 };
+
+//check what century it is
+const century = (year = parseInt(document.getElementById("str").value)) => document.getElementById("result").innerHTML = Math.ceil(year/100)
