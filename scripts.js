@@ -1,3 +1,13 @@
+// Execute a function when the user releases a key on the keyboard
+addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
 //Return the number (count) of vowels in the given string.
 
 //We will consider a, e, i, o, and u as vowels for this Kata.
@@ -170,5 +180,50 @@ function simpleTransposition(text = document.getElementById("str").value) {
     }
     document.getElementById("result").innerHTML = row1 + row2
 }
-//count how many truthy values there are
+
+//Check if an array contains a given value
+
+function checkArrayForValue(a = document.getElementById("str").value, x = document.getElementById("val").value) {
+    let arr = a.split(', ');
+    if (a === "") document.getElementById("result").innerHTML = "Enter in all values first"
+    else document.getElementById("result").innerHTML = !(-1 == arr.indexOf(x))
+};
+
+//get the average marks of an array of numbers, rounded down.
+function getAverage(marks = document.getElementById("val").value) {
+    let arr = marks.split(', ').map(x => parseInt(x));
+    console.log(arr)
+    document.getElementById("result").innerHTML = Math.floor(arr.reduce((sum, next) => { return sum + next }, 0) / arr.length)
+}
+
+//return a bunch of 1's and 0's alternating depending on the size given
+function stringy(size = document.getElementById("str").value) {
+    let result = '';
+    for (let i = 0; i < size; i++) {
+        i % 2 ? result += '0' : result += '1'
+    }
+    document.getElementById("result").innerHTML = result
+}
+
+//multiply 2 different sets of numbers and find the number difference between them
+//Difference in Volume
+const findDifference = ((a = document.getElementById("aValue").value, b = document.getElementById("bValue").value) => {
+    let arr1 = a.split(', ')
+    let arr2 = b.split(', ')
+    document.getElementById("result").innerHTML = Math.abs(arr1.reduce((prev, curr) => prev *= curr) - arr2.reduce((prev, curr) => prev *= curr))
+})
+
+//Check to see if a string is a palindrome, ignoring case sensitivity.
+const isPalindrome = (x = document.getElementById("str").value) => {
+
+    document.getElementById("result").innerHTML = x.toLowerCase() === x.split('').reverse().join('').toLowerCase()
+};
+
+//check what century it is
+const century = (year = parseInt(document.getElementById("str").value)) => document.getElementById("result").innerHTML = Math.ceil(year/100)
+
+//convert a string to an array
+const stringToArray = (string = document.getElementById("str").value) => document.getElementById("result").innerHTML = string.split(' ')
+
+//count truthy values
 const countSheeps = (a) => a.reduce((acc, val) => val? acc + 1 : acc, 0)
