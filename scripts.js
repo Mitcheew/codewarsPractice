@@ -170,3 +170,5 @@ function simpleTransposition(text = document.getElementById("str").value) {
     }
     document.getElementById("result").innerHTML = row1 + row2
 }
+//count how many truthy values there are
+const countSheeps = (a) => a.reduce((acc, val) => val? acc + 1 : acc, 0)
